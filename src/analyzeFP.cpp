@@ -94,17 +94,6 @@ bool CVFPCPlugin::clearLog() {
 	try {
 		logBuffer.clear();
 
-		string path = getPath();
-		path += LOG_FILE;
-
-		ofstream ofs;
-		ofs.open(path.c_str(), ios::trunc);
-
-		if (ofs.is_open()) {
-			ofs << "Log: Cleared Successfully." << std::endl;
-			ofs.close();
-			return true;
-		}
 	}
 	catch (const std::exception& ex) {
 		sendMessage("Error", ex.what());
@@ -125,7 +114,6 @@ bool CVFPCPlugin::clearLog() {
 //Write to log buffer
 bool CVFPCPlugin::bufLog(string message) {
 	try {
-		logBuffer.push_back(message);
 		return true;
 	}
 	catch (const std::exception& ex) {
@@ -148,41 +136,7 @@ bool CVFPCPlugin::bufLog(string message) {
 bool CVFPCPlugin::writeLog() {
 	bufLog("Log: File - Writing...");
 	try {
-		string path = getPath();
-		path += LOG_FILE;
-
-		ifstream ifs;
-		ifs.open(path.c_str());
-		vector<string> file{};
-
-		if (ifs.is_open()) {
-			string line;
-			while (getline(ifs, line)) {
-				file.push_back(line);
-			}
-		}
-
-		file.insert(file.end(), logBuffer.begin(), logBuffer.end());
-
-		ifs.close();
-		size_t start = 0;
-
-		if (file.size() > 20000) {
-			start = file.size() - 20000;
-		}
-
-		ofstream ofs;
-		ofs.open(path.c_str(), ios::trunc);
-
-		if (ofs.is_open()) {
-			for (size_t i = start; i < file.size(); i++) {
-				ofs << file.at(i).c_str() << std::endl;
-			}
-			ofs.close();
-			logBuffer.clear();
-			bufLog("Log: File - Write Complete");
-			return true;
-		}
+		logBuffer.clear();
 	}
 	catch (const std::exception& ex) {
 		sendMessage("Error", ex.what());
