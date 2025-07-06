@@ -342,10 +342,15 @@ public:
 	/*! This function do not deallocate memory in the array, i.e. the capacity is unchanged.
 	*/
 	void Clear() {
-		RAPIDJSON_ASSERT(IsArray()); 
-		for (SizeType i = 0; i < data_.a.size; ++i)
-			data_.a.elements[i].~GenericValue();
-		data_.a.size = 0;
+		if (IsArray())
+		{
+			for (SizeType i = 0; i < data_.a.size; ++i)
+			{
+				data_.a.elements[i].~GenericValue();
+			}
+
+			data_.a.size = 0;
+		}
 	}
 
 	//! Get an element from array by index.
