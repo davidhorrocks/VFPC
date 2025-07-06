@@ -1995,7 +1995,7 @@ string CVFPCPlugin::MinMaxOutput(CFlightPlan flightPlan, const Value& constraint
 		raw_lvls.push_back(lvls);
 	}
 
-	bool changed;
+	bool changed = false;
 	size_t i = 0;
 
 	while (i < raw_lvls.size() - 1) {
