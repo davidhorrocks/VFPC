@@ -2,6 +2,7 @@
 #include "analyzeFP.hpp"
 #include <curl/curl.h>
 #include <future>
+#include <chrono>
 
 extern "C" IMAGE_DOS_HEADER __ImageBase;
 
