@@ -2,13 +2,13 @@
 #include "stdafx.h"
 
 #define MY_PLUGIN_NAME      "VFPC (UK)"
-#define MY_PLUGIN_VERSION   "3.6.4"
+#define MY_PLUGIN_VERSION   "3.6.4.1"
 #define MY_PLUGIN_DEVELOPER "Lenny Colton, Jan Fries, Hendrik Peter, Sven Czarnian"
 #define MY_PLUGIN_COPYRIGHT "GPL v3"
-#define MY_PLUGIN_VIEW_AVISO  "VATSIM (UK) Flight Plan Checker"
+#define MY_PLUGIN_VIEW_AVISO  "VATSIM (UK) Flight Plan Checker No Logging"
 #define MY_API_ADDRESS	"https://vfpc.tomjmills.co.uk/"
 
-#define PLUGIN_WELCOME_MESSAGE	"Welcome to the (UK) VATSIM Flight Plan Checker"
+#define PLUGIN_WELCOME_MESSAGE	"Welcome to the (UK) VATSIM Flight Plan Checker No Logging"
 
 using namespace std;
 

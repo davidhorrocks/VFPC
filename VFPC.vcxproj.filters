@@ -36,6 +36,9 @@
     <ClInclude Include="src\EuroScopePlugIn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\analyzeFP.cpp">
@@ -51,5 +54,10 @@
   <ItemGroup>
     <Library Include="lib\libcurl_a.lib" />
     <Library Include="lib\EuroScopePlugInDll.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VPFC.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
